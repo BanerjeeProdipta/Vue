@@ -13,13 +13,17 @@
             Completed Tasks
         </h3>
         <ul>
-            <li v-for="task in tasks" v-if="task.completed" v-text="task.description"></li>
+            <li v-for="task in tasks" v-if="task.completed">
+                <input type="checkbox" @click="toggleIncomplete(task)"> {{task.description}}
+            </li>
         </ul>
         <h3>
             Incomplete Tasks
         </h3>
         <ul>
-            <li v-for="task in incompleteTask" v-text="task.description"></li>
+            <li v-for="task in incompleteTask">
+                <input type="checkbox" @click="toggleComplete(task)">{{task.description}}
+            </li>
         </ul>
     </div>
 
@@ -48,7 +52,17 @@
                 incompleteTask() {
                     return this.tasks.filter(task => !task.completed);
                 }
-            }
+            },
+            methods: {
+                toggleComplete(task) {
+                    task.completed = !task.completed
+
+                },
+                toggleIncomplete(task) {
+                    task.completed = !task.completed
+
+                }
+            },
         })
     </script>
 </body>
