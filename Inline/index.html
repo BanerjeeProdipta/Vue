@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="root">
+        <progress-view inline-template>
+            <div>
+                <h1>Your progress in this course is {{completionRate}}%.</h1>
+                <p><button @click="completionRate+=10">Finished</button></p>
+            </div>
+        </progress-view>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
